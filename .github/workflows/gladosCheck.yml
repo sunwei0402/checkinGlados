@@ -3,8 +3,7 @@ name: auto check
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
-      timezone: 'Asia/Shanghai'
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
