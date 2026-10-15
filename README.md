@@ -17,11 +17,24 @@
 - `PUSHDEER_SENDKEY`：PushDeer 的 key。
 - `GLADOS_VERBOSE`：`true` 或 `false`，控制是否输出详细日志。
 
-## 运行方式
+查找cookie
 
-工作流会在 `github actions` 中按小时执行：
-- cron: `0 * * * *`
-- timezone: `Asia/Shanghai`
+跳转至自己的仓库的Settings->Secrets and variables->Action
+
+添加1个repository secret，命名为GLADOS_COOKIES，其值对应GLaDOS账号的cookie值中的有效部分（获取方式如下）
+
+在GLaDOS的签到页面按F12
+
+切换到Network页面下，刷新
+
+<img width="633" height="386" alt="image" src="https://github.com/user-attachments/assets/555e68e4-0666-49fb-8cf3-68f1395ce153" />
+
+点击第一个选项卡后在Request Headers下找到Cookie，右键复制cookie的值即可
+
+参考格式：koa:sess=eyJ1c2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxAwMH0=; koa:sess.sig=xJkOxxxxxxxxxxxxxxxtnM;
+
+
+多账号请在 COOKIES 中 添加多个 cookies 中间使用 &连接即可。（例如： c1&c3&c3...）
 
 也可手动通过 `workflow_dispatch` 运行。
 
