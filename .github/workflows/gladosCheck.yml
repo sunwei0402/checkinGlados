@@ -2,15 +2,8 @@ name: auto check
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
-    paths-ignore:
-      - 'README.md'
-      - 'imgs/'
   schedule:
     - cron: '*/5 * * * *'
-  watch:
-    types: started
 
 jobs:
   build:
